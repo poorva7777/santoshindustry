@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Santosh Industries</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            background-image: url('images/new.jpg'); /* Add your background image URL here */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            top: 0;
+            left: 0;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .logo span {
+            color: #0056b3;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            transform: rotateY(10deg);
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.9);
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        /* Main content */
+        .content {
+            flex: 1;
+            padding: 120px 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Banner Styles */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .banner-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .banner-content h3 {
+            color: #ffcc00;
+            font-size: 24px;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .explore-btn:hover {
+            background-color: #ffcc00;
+        }
+
+        .banner:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .why-choose-us h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 40px;
+        }
+
+        .reasons {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .reason {
+            flex: 1;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .reason h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .reason p {
+            color: #555;
+        }
+
+        .reason:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px 10%;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            transform: rotate(360deg);
+            color: #ffcc00;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .banner {
+                height: 200px;
+            }
+
+            .banner-content h3 {
+                font-size: 18px;
+            }
+
+            .explore-btn {
+                padding: 8px 16px;
+            }
+
+            .reasons {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Santosh<span>Industries</span></h2>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="industries.html">Industries</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="banner" style="background-image: url('images/b2.jpg');">
+            <div class="banner-content">
+                
+                <a href="#" class="explore-btn">Explore</a>
+            </div>
+        </div>
+        <div class="banner" style="background-image: url('images/b22.jpg');">
+            <div class="banner-content">
+                
+                <a href="#" class="explore-btn">Explore</a>
+            </div>
+        </div>
+        <section class="why-choose-us">
+            <h2>Why Choose Us</h2>
+            <div class="reasons">
+                <div class="reason">
+                    <h3>Quality Machinery</h3>
+                    <p>Our products are known for their reliability, efficiency, and superior performance.</p>
+                </div>
+                <div class="reason">
+                    <h3>Expert Team</h3>
+                    <p>We have a skilled team of engineers and technicians who ensure the best solutions for your needs.</p>
+                </div>
+                <div class="reason">
+                    <h3>Customer Support</h3>
+                    <p>We provide top-notch customer support to ensure your operations run smoothly.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://wa.me/+919096649527" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.youtube.com/@SANTOSH-INDUSTRIES" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/Santosh_Industries" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>

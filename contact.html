@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/new.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; 
+            color: #fff; 
+            position: relative;
+            min-height: 100vh; 
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: -1; 
+        }
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for the form */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow to form for better visibility */
+        }
+        h1, h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333; /* Dark color for better visibility over semi-transparent background */
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #fff; /* Light background for input fields */
+            color: #333; /* Dark text inside input fields */
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Inquiry Form</h1>
+        <form action="YOUR_SERVER_ENDPOINT" method="POST">
+            <h2>Contact Information</h2>
+            
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first_name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last_name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="example@example.com">
+
+            <label for="phone">Phone No:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 555-5555">
+
+            <h2>Company Information</h2>
+            
+            <label for="job-title">Job Title:</label>
+            <input type="text" id="job-title" name="job_title">
+
+            <label for="company-name">Company Name:</label>
+            <input type="text" id="company-name" name="company_name">
+
+            <label for="street-address">Street Address:</label>
+            <input type="text" id="street-address" name="street_address">
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+
+            <label for="state">State/Region:</label>
+            <input type="text" id="state" name="state">
+
+            <label for="postal-code">Postal Code:</label>
+            <input type="text" id="postal-code" name="postal_code">
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country">
+
+            <h2>About Your Inquiry</h2>
+
+            <label for="industry">Industry:</label>
+            <input type="text" id="industry" name="industry">
+            <label for="material-handled">Material Handled:</label>
+            <input type="text" id="material-handled" name="material_handled">
+            <label for="bulk-density">Bulk Density:</label>
+            <input type="text" id="bulk-density" name="bulk_density">
+
+            <label for="application-description">Describe Your Application:</label>
+            <textarea id="application-description" name="application_description" rows="4"></textarea>
+
+            <label for="product-interest">Product Interest:</label>
+            <select id="product-interest" name="product_interest" multiple>
+                <option value="vibratory_shifter">Vibratory Shifter</option>
+                <option value="centrifugal_separator">Centrifugal Separator</option>
+                <option value="rectangle_separator">Rectangle Separator</option>
+            </select>
+            <label for="timetable">Desired Timetable:</label>
+            <input type="text" id="timetable" name="timetable">
+            <label for="source">How Did You Hear About Us?</label>
+            <input type="text" id="source" name="source">
+            <label for="communication-method">Preferred Communication Method:</label>
+            <input type="text" id="communication-method" name="communication_method">
+            <label>
+                <input type="checkbox" name="technical_representation" value="yes">
+                Yes, I would like a technical representative to contact me
+            </label>
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </div>
+</body>
+</html>

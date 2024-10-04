@@ -1,0 +1,330 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5; /* Light background color */
+}
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 10%;
+    background-color: #333; /* Dark background for the header */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+}
+
+span {
+    color:  #0056b3;;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color:  #0056b3;
+    transition: .3s;
+}
+
+button {
+    border: none;
+    background:  #0056b3;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    transition: .4s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Banner Section */
+.banner-section {
+    margin-top: 120px; /* Space below the fixed navigation */
+    padding: 50px 10%;
+    background-color: white;
+    text-align: center;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Maximum width of the banner */
+    height: 400px; /* Height of the banner */
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits well */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.banner .image1 {
+    z-index: 1;
+    opacity: 1;
+}
+
+.banner .image2 {
+    z-index: 2;
+    opacity: 0;
+}
+
+.banner:hover .image2 {
+    opacity: 1;
+}
+
+.banner:hover .image1 {
+    opacity: 0;
+}
+/* Why Choose Us Section */
+.why-choose-us {
+    padding: 50px 10%;
+    background-color: #f9f9f9;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.why-choose-us:hover {
+    background-color: #eef2f7; /* Light background change on hover */
+}
+
+.why-choose-us h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.why-choose-us h2:hover {
+    color: #0056b3; /* Slight color change on hover */
+}
+
+.why-choose-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.why-choose-content h3:hover {
+    color: #ff4500; /* Highlighted text on hover */
+}
+
+.why-choose-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.why-choose-content p:hover {
+    color: #444;
+}
+
+.why-choose-content ul {
+    list-style: disc;
+    padding-left: 40px;
+    text-align: left;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.why-choose-content ul li {
+    margin-bottom: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.why-choose-content ul li::before {
+    content: '•';
+    color: #ff4500;
+    font-size: 18px;
+    position: absolute;
+    left: -25px;
+    top: 3px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.why-choose-content ul li:hover {
+    transform: translateX(10px); /* Slide effect on hover */
+    color: #333;
+}
+
+.why-choose-content ul li:hover::before {
+    opacity: 1; /* Bullet point becomes visible on hover */
+}
+
+.why-choose-address {
+    margin-top: 30px;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.why-choose-address:hover {
+    color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .why-choose-us {
+        padding: 40px 8%;
+    }
+
+    .why-choose-us h2 {
+        font-size: 28px;
+    }
+
+    .why-choose-content h3 {
+        font-size: 22px;
+    }
+
+    .why-choose-content p, .why-choose-address {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose-us {
+        padding: 30px 6%;
+    }
+
+    .why-choose-us h2 {
+        font-size: 26px;
+    }
+
+    .why-choose-content h3 {
+        font-size: 20px;
+    }
+
+    .why-choose-content ul {
+        padding-left: 30px;
+    }
+
+    .why-choose-content p, .why-choose-address {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .why-choose-us {
+        padding: 20px 5%;
+    }
+
+    .why-choose-us h2 {
+        font-size: 24px;
+    }
+
+    .why-choose-content h3 {
+        font-size: 18px;
+    }
+
+    .why-choose-content ul {
+        padding-left: 20px;
+    }
+
+    .why-choose-content p, .why-choose-address {
+        font-size: 13px;
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 25px;
+    }
+
+    .banner-section {
+        padding: 30px 5%;
+    }
+
+    .banner {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .banner-section {
+        padding: 20px 5%;
+    }
+
+    .banner {
+        height: 200px;
+    }
+}

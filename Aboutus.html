@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>About Us - Santosh Industries</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            background: url('images/new.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            color: #f0f0f0;
+        }
+
+        /* Dark overlay applied over the background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            z-index: -1;
+        }
+
+        /* Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            backdrop-filter: blur(5px); /* Softer blur effect */
+            z-index: 100;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .logo span {
+            color: #0056b3;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        nav ul {
+            transition: max-height 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 100px 10%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+
+        .about-us h2 {
+            font-size: 36px;
+            color: #ffcc00;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .about-us h2::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background-color: #0056b3;
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+
+        .about-us p, .about-us ul li {
+            font-size: 18px;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li::before {
+            
+            color: #ffcc00;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background for visibility */
+            color: white;
+            padding: 20px 10%;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer .social-icons {
+            margin: 10px 0;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            transform: rotate(360deg);
+            color: #ffcc00;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .about-us h2 {
+                font-size: 28px;
+            }
+
+            .about-us p {
+                font-size: 16px;
+            }
+
+            footer .social-icons a {
+                font-size: 18px;
+                margin: 0 8px;
+            }
+
+            footer p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Santosh<span>Industries</span></h2>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="industries.html">Industries</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="about-us">
+        <h2>Welcome to Santosh Industries</h2>
+        <p>Leading the Way in Vibratory Sifting Solutions</p>
+        <p>
+            Santosh Industries is a pioneer in providing advanced vibratory sifting solutions, catering to a wide range of industries. With over two decades of expertise, our focus is on designing and manufacturing high-performance machinery that meets the unique demands of modern-day industrial processes. Our state-of-the-art vibratory sifters ensure precision and efficiency, helping industries achieve superior quality control in their production processes.
+        </p>
+        <p>
+            Our commitment to excellence drives us to continuously innovate and adopt the latest technological advancements. By offering customized solutions tailored to the specific needs of our clients, we strive to empower businesses with robust, reliable, and easy-to-maintain equipment that ensures operational efficiency and optimal results.
+        </p>
+        <h2>Our Mission</h2>
+        <p>
+            At Santosh Industries, our mission is to provide top-tier vibratory sifting solutions that enhance productivity while maintaining the highest standards of safety and precision. We aim to build long-lasting relationships with our clients by delivering unparalleled quality and exceptional customer service. Our focus is on sustainability, innovation, and contributing to the success of industries around the globe.
+        </p>
+
+        <h2>Why Choose Our Vibratory Sifters?</h2>
+        <ul>
+            <li><strong>Unmatched Precision:</strong> Our sifters ensure accurate particle separation, which is crucial in maintaining product quality.</li>
+            <li><strong>Robust Construction:</strong> Built from durable materials, our machines can withstand demanding industrial environments.</li>
+            <li><strong>Custom Solutions:</strong> We tailor our sifters to meet the specific requirements of different industries, ensuring seamless integration into your workflow.</li>
+            <li><strong>Innovative Technology:</strong> We incorporate the latest advancements in vibration technology, resulting in machines that are not only efficient but also energy-saving.</li>
+            <li><strong>Easy Maintenance:</strong> Our equipment is designed with ease of maintenance in mind, reducing downtime and operational costs.</li>
+        </ul>
+        <h2>Industries We Serve</h2>
+        <p>
+            Our vibratory sifters are trusted by numerous industries where precision, safety, and efficiency are of utmost importance. We serve the following sectors:
+        </p>
+        <ul>
+            <li><strong>Food & Beverage:</strong> Ensuring safe, contaminant-free products through effective sifting of ingredients and final products.</li>
+            <li><strong>Pharmaceuticals:</strong> Guaranteeing the purity of pharmaceutical products by accurately separating particles during production.</li>
+            <li><strong>Chemical Processing:</strong> Facilitating the safe and efficient processing of chemicals, helping manufacturers meet strict regulatory standards.</li>
+            <li><strong>Recycling:</strong> Supporting recycling processes by efficiently separating materials during the sorting and reclamation phases.</li>
+        </ul>
+    </section>
+<footer>
+    <div class="footer-content">
+        <div class="social-icons">
+            <!-- WhatsApp Link -->
+            <a href="https://wa.me/+919096649527" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- YouTube Link -->
+            <a href="https://www.youtube.com/@SANTOSH-INDUSTRIES" target="_blank" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <!-- Instagram Link -->
+            <a href="https://www.instagram.com/santosh_industries_nashik" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p>Get in Touch</p>
+                <p>	Phone: +91-7841876771</p>
+                <p>	Email: office.santoshindustries@gmail.com</p>
+                <p>	Address: Plot No B150, Malegaon MIDC, Sinnar-Nashik-422113</p>
+  
+    </div>
+</footer>
+<style>
+    .social-icons a {
+        margin: 0 10px;
+        color: white;
+        font-size: 24px; /* Adjust size as needed */
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        transform: scale(1.2);
+        color: #ffcc00; /* Change color on hover */
+    }
+</style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
